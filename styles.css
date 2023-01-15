@@ -1,0 +1,146 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: Arial;
+	outline: none;
+}
+html {
+	font-size: 62.5%;
+}
+button {
+	cursor: pointer;
+}
+:root {
+	--theme-color: rgb(28, 168, 114);
+	--light-theme-color: rgb(34, 212, 144);
+}
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	z-index: 1;
+}
+.container h2 {
+	font-size: 4rem;
+	text-align: center;
+	margin: 0 0 0;
+	line-height: 6rem;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.main input,
+.main button {
+	width: 90%;
+	padding: 1.3rem 0.5rem;
+	border-radius: 0.2rem;
+}
+
+.main input {
+	margin: 0.5rem 0 0rem;
+	border: 1px solid gray;
+}
+.main input:focus {
+	border: 1px solid var(--theme-color);
+}
+
+.main button {
+	background-color: var(--theme-color);
+	color: #fff;
+	border: none;
+}
+.main button.active {
+	background-color: var(--light-theme-color);
+	pointer-events: none;
+}
+
+.container p {
+	margin: 0 2rem 3rem;
+	font-size: 1.2rem;
+}
+
+.main div {
+	width: 100%;
+	padding: 0.3rem 1.5rem 1rem;
+}
+.main div span {
+	font-size: 1.2rem;
+	color: red;
+	margin: 0 0 2rem;
+	transition: all 0.2s ease-in-out;
+}
+
+.modal {
+	background-color: rgb(231, 231, 231);
+	box-shadow: 0px 1px 6px 2px grey;
+	margin: 2rem 0;
+	padding: 6rem 2rem 0;
+	font-size: 1.5rem;
+	height: 40vh;
+	position: absolute;
+	top: 27%;
+	left: 5%;
+	transform: translate(-50%, -50%);
+	width: 90%;
+	z-index: 3;
+	text-align: center;
+	border-radius: 0.5rem;
+	opacity: 0;
+	transition: all 0.2s ease-in-out;
+	transform: scale(0.8);
+	z-index: -1;
+}
+.anim {
+	opacity: 1;
+	transform: scale(1);
+	z-index: 3;
+}
+.modal button {
+	color: black;
+	display: block;
+	font-size: 5rem;
+	text-align: right;
+	position: absolute;
+	top: 0;
+	right: 1.5rem;
+	background-color: transparent;
+	border: none;
+}
+.modal p {
+	font-size: 2rem;
+}
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+	backdrop-filter: blur(10px);
+	z-index: 2;
+	transition: all 0.2s ease;
+}
+.hidden {
+	opacity: 0;
+	z-index: -1;
+	transition: all 0.2s ease-in-out;
+}
+@media only screen and (min-width: 765px) {
+	.container {
+		width: 40%;
+	}
+	.modal {
+		top: 48%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 50%;
+	}
+}
