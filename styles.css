@@ -133,6 +133,7 @@ button {
 	z-index: -1;
 	transition: all 0.2s ease-in-out;
 }
+footer {	position: absolute;	bottom: 7%;	width: 100%;	text-align: center;	color: var(--theme-color);	font-size: 1.5rem;}footer a {	text-decoration: none; color: var(--theme-color);}
 @media only screen and (min-width: 765px) {
 	.container {
 		width: 40%;
